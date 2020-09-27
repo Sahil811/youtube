@@ -13,11 +13,15 @@ const ChannelRow = ({
 }) => {
   return (
     <div className="channelRow">
-      <Avatar className="channelRow__logic" alt={channel} src={image} />
+      <Avatar className="channelRow__logo" alt={channel} src={image} />
       <div className="channelRow__text">
         <h4>
           {channel} {verified && <CheckCircleIcon />}
         </h4>
+        <p>
+          {subs} subscribers • {noOfVideos} videos
+        </p>
+        <p>{description}</p>
       </div>
     </div>
   );
