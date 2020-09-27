@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const SideBar = () => {
   return (
-    <div className="sideBar">
+    <div className="sidebar">
       <SidebarRow Icon={HomeIcon} title="Home" active />
       <SidebarRow Icon={WhatshotIcon} title="Trending" />
       <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
