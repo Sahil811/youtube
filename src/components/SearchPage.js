@@ -4,7 +4,7 @@ import TuneIcon from "@material-ui/icons/Tune";
 import ChannelRow from "./ChannelRow";
 import VideoRow from "./VideoRow";
 
-const SearchPage = () => {
+const SearchPage = ({ videos }) => {
   return (
     <div className="searchPage">
       <div className="searchPage__filter">
@@ -27,105 +27,17 @@ const SearchPage = () => {
 
       <hr />
 
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
-
-      <VideoRow
-        channel="Uxs"
-        views="1.4M"
-        subs="1000M"
-        description="Super awesome"
-        timestamp="49 seconds ago"
-        title="Everything"
-        image="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-600w-407021107.jpg"
-      />
+      {videos.map((video) => (
+        <VideoRow
+          channel={video.snippet.channelTitle}
+          views="1.4M"
+          subs="1000M"
+          description={video.snippet.description}
+          timestamp={video.snippet.publishAt}
+          title={video.snippet.title}
+          image={video.snippet.thumbnails.high.url}
+        />
+      ))}
     </div>
   );
 };
