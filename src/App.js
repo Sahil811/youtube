@@ -30,8 +30,6 @@ function App() {
     getVideo();
   }, [search, dispatch]);
 
-  console.log(videos);
-
   return (
     <div className="app">
       <BrowserRouter>
